@@ -1,157 +1,70 @@
 ---
-title: Components
-description: Use React components in Markdown using MDX.
+title: Setup 
+description: A guide for you to setup on your project
 ---
 
-The following components are available out of the box for use in Markdown.
+# md-to-jsonify
 
-If you'd like to build and add your own custom components, see the [Custom Components](#custom-components) section below.
+`md-to-jsonify` is an npm package that allows you to extract JSON data from Markdown files. It provides two main functions: `extract` and `extractFromLink`. The `extract` function extracts JSON data from the file system, while the `extractFromLink` function extracts JSON data from a remote link.
 
-## Built-in Components
+## Installation
 
-### 1. Callout
+You can install `md-to-jsonify` using npm or yarn:
 
-```mdx
-<Callout type=" default | warning | danger ">
-
-This is a default callout. You can embed **Markdown** inside a `callout`.
-
-</Callout>
+```bash
+npm install md-to-jsonify
 ```
 
-<Callout>
+or
 
-This is a default callout. You can embed **Markdown** inside a `callout`.
-
-</Callout>
-
-<Callout type="warning">
-
-This is a warning callout. It uses the props `type="warning"`.
-
-</Callout>
-
-<Callout type="danger">
-
-This is a danger callout. It uses the props `type="danger"`.
-
-</Callout>
-
-### 2. Card
-
-```mdx
-<Card href="#">
-
-#### Heading
-
-You can use **markdown** inside cards.
-
-</Card>
+```bash
+yarn add md-to-jsonify
 ```
 
-<Card href="#">
+## Usage
 
-#### Heading
+To use `md-to-jsonify` in your project, you need to import the desired functions.
 
-You can use **markdown** inside cards.
+### Extract JSON data from the file system
 
-</Card>
+```javascript
+import { extract } from 'md-to-jsonify';
 
-You can also use HTML to embed cards in a grid.
-
-```mdx
-<div className="grid grid-cols-2 gap-4">
-  <Card href="#">
-    #### Card One 
-    You can use **markdown** inside cards.
-  </Card>
-
-  <Card href="#">
-    #### Card Two 
-    You can also use `inline code` and code blocks.
-  </Card>
-</div>
+const jsonData = extract('/path/to/markdown/file.md');
+console.log(jsonData);
 ```
 
-<div className="grid grid-cols-2 gap-4">
-  <Card href="#">
-    #### Card One 
-    You can use **markdown** inside cards.
-  </Card>
+The `extract` function takes the path to the Markdown file as a parameter and returns the extracted JSON data.
 
-  <Card href="#">
-    #### Card Two 
-    You can also use `inline code` and code blocks.
-  </Card>
-</div>
+### Extract JSON data from a remote link
 
----
+```javascript
+import { extractFromLink } from 'md-to-jsonify';
 
-## Custom Components
-
-You can add your own custom components using the `components` props from `useMDXComponent`.
-
-```ts title="components/mdx.tsx" {2,6}
-import { Callout } from "@/components/callout"
-import { CustomComponent } from "@/components/custom"
-
-const components = {
-  Callout,
-  CustomComponent,
-}
-
-export function Mdx({ code }) {
-  const Component = useMDXComponent(code)
-
-  return (
-    <div className="mdx">
-      <Component components={components} />
-    </div>
-  )
-}
+const jsonData = await extractFromLink('https://example.com/markdown/file.md');
+console.log(jsonData);
 ```
 
-Once you've added your custom component, you can use it in MDX as follows:
+The `extractFromLink` function takes the URL of the Markdown file as a parameter and returns the extracted JSON data. Note that this function is asynchronous and requires the use of `await`.
 
-```js
-<CustomComponent propName="value" />
+## Examples
+
+Here are a few examples to help you get started with `md-to-jsonify`.
+
+### Extracting JSON data from a local Markdown file
+
+```javascript
+import { extract } from 'md-to-jsonify';
+
+const jsonData = extract('/path/to/markdown/file.md');
+console.log(jsonData);
 ```
 
----
+### Extracting JSON data from a remote Markdown file
 
-## HTML Elements
+```javascript
+import { extractFromLink } from 'md-to-jsonify';
 
-You can overwrite HTML elements using the same technique above.
-
-```ts {4}
-const components = {
-  Callout,
-  CustomComponent,
-  hr: ({ ...props }) => <hr className="my-4 border-slate-200 md:my-6" />,
-}
-```
-
-This will overwrite the `<hr />` tag or `---` in Mardown with the HTML output above.
-
----
-
-## Styling
-
-Tailwind CSS classes can be used inside MDX for styling.
-
-```mdx
-<p className="text-red-600">This text will be red.</p>
-```
-
-Make sure you have configured the path to your content in your `tailwind.config.js` file:
-
-```js title="tailwind.config.js" {6}
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./content/**/*.{md,mdx}",
-  ],
-}
+const jsonData = await extractFromLink('https://example.com/markdown/file.md');
+console.log(jsonData);
 ```
