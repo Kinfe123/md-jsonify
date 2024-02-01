@@ -39,12 +39,12 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
   const user = await getCurrentUser()
 
   return (
-    <div className="flex h-screen  overflow-hidden  flex-col">
+    <div className="flex h-screen flex-col">
     
       <NavBar user={user} items={docsConfig.mainNav} rightElements={rightHeader()}>
         <DocsSidebarNav items={docsConfig.sidebarNav} />
       </NavBar>
-      <div className="container flex-1  overflow-hidden scroll">{children}</div>
+      <div className="container flex-1 overflow-x-hidden  ">{children}</div>
       <SiteFooter className="border-t" />
     </div>
   )

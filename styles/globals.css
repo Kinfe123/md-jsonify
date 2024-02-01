@@ -53,10 +53,12 @@
 @layer base {
   * {
     @apply border-border;
+
   }
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+
   }
 }
 
@@ -65,4 +67,5 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+
 }
