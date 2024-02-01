@@ -30,14 +30,13 @@ export const metadata = {
     "shadcn ui",
     "Resend",
     "React Email",
-    "Stripe"
   ],
   authors: [
     {
-      name: "mickasmt",
+      name: "Kinfish",
     },
   ],
-  creator: "mickasmt",
+  creator: "Kinfish",
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",
