@@ -6,6 +6,7 @@ import { cn, nFormatter } from "@/lib/utils"
 import { Icons } from "@/components/shared/icons"
 import { env } from "@/env.mjs"
 import Feeder from "@/components/feeder"
+import GetStarted from "@/components/gradient-btn"
 
 export default async function IndexPage() {
   const stars = 100
@@ -62,9 +63,10 @@ export default async function IndexPage() {
             className="flex animate-fade-up justify-center space-x-2 opacity-0 md:space-x-4"
             style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
           >
-            <Link href="/docs" className={cn(buttonVariants({ size: "lg" }))}>
+            {/* <Link href="/docs" className={cn(buttonVariants({ size: "lg" }))}>
               Get Started
-            </Link>
+            </Link> */}
+            <GetStarted />
             
           </div>  
         </div>
