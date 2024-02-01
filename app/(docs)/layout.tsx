@@ -37,7 +37,6 @@ const rightHeader = () => (
 
 export default async function DocsLayout({ children }: DocsLayoutProps) {
   const user = await getCurrentUser()
-
   return (
     <div className="flex h-screen overflow-hidden  flex-col">
     
