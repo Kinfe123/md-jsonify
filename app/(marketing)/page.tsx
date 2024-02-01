@@ -1,10 +1,6 @@
-import Link from "next/link"
 
-import { buttonVariants } from "@/components/ui/button"
 import { siteConfig } from "@/config/site"
-import { cn, nFormatter } from "@/lib/utils"
-import { Icons } from "@/components/shared/icons"
-import { env } from "@/env.mjs"
+
 import Feeder from "@/components/feeder"
 import GetStarted from "@/components/gradient-btn"
 
