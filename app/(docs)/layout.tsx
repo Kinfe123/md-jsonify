@@ -44,7 +44,7 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
       <NavBar user={user} items={docsConfig.mainNav} rightElements={rightHeader()}>
         <DocsSidebarNav items={docsConfig.sidebarNav} />
       </NavBar>
-      <div className="container flex-1  overflow-hidden overflow-y-auto">{children}</div>
+      <div className="container flex-1  overflow-hidden scroll">{children}</div>
       <SiteFooter className="border-t" />
     </div>
   )
