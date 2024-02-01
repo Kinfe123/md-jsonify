@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
   name: "MD to JSON",
   description:
     "An optimized and optimal way of dumping your json compatible data from markdown data store content :)",
-  url: 'http://localhost:3000',
+  url: site_url,
   ogImage: `${site_url}/og.jpg`,
   links: {
     twitter: "https://twitter.com/KinfishT",
