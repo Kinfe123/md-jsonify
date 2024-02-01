@@ -6,7 +6,7 @@ const site_url = env.NEXT_PUBLIC_APP_URL;
 export const siteConfig: SiteConfig = {
   name: "MD to JSON",
   description:
-    "An optimized and optimal way of dumping your json compatible data from markdown data store content",
+    "An optimized and optimal way of dumping your json compatible data from markdown data store content :)",
   url: 'http://localhost:3000',
   ogImage: `${site_url}/og.jpg`,
   links: {

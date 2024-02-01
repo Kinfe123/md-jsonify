@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site"
 import { cn, nFormatter } from "@/lib/utils"
 import { Icons } from "@/components/shared/icons"
 import { env } from "@/env.mjs"
+import Feeder from "@/components/feeder"
 
 export default async function IndexPage() {
   const stars = 100
@@ -29,14 +30,16 @@ export default async function IndexPage() {
     <>
       <section className="space-y-6 pb-12 pt-16 lg:py-28">
         <div className="container flex max-w-[64rem] flex-col items-center gap-5 text-center">
-          <Link
+          {/* <Link
             href="https://twitter.com/KinfishT/status/1719892161095745801"
             className={cn(buttonVariants({ variant: "outline", size: "sm" }), "animate-fade-up opacity-0")}
             style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
             target="_blank"
           >
             Introducing on <Icons.twitter className="ml-2 size-4" />
-          </Link>
+          </Link> */}
+
+          <Feeder feed="Introducting MD-JSONIFY" link="https://twitter.com/KinfishT"/>
 
           <h1
             className="animate-fade-up text-balance font-urban text-4xl font-extrabold tracking-tight opacity-0 sm:text-5xl md:text-6xl lg:text-7xl"
@@ -63,7 +66,7 @@ export default async function IndexPage() {
               Get Started
             </Link>
             
-          </div>
+          </div>  
         </div>
       </section>
 
