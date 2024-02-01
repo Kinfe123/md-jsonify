@@ -65,14 +65,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
+      <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-transparent font-sans antialiased",
           fontSans.variable,
           fontUrban.variable,
           fontHeading.variable
         )}
       >
+
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
           <Analytics />
@@ -80,7 +82,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ModalProvider />
           <TailwindIndicator />
         </ThemeProvider>
+
       </body>
+        </div>
     </html>
   )
 }
