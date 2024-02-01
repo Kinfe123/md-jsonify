@@ -5,6 +5,7 @@ import { useMDXComponent } from "next-contentlayer/hooks"
 import { cn } from "@/lib/utils"
 import { Callout } from "@/components/shared/callout"
 import { MdxCard } from "@/components/content/mdx-card"
+import CardSpotlight from "../hovery-card"
 
 const components = {
   h1: ({ className, ...props }) => (
@@ -150,6 +151,7 @@ const components = {
   Image: (props: ImageProps) => <NextImage {...props} />,
   Callout,
   Card: MdxCard,
+  Card2: CardSpotlight
 }
 
 interface MdxProps {
