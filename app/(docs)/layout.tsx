@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/classnames-order */
 import Link from "next/link"
 
 import { DocsSearch } from "@/components/docs/search"
@@ -38,11 +39,11 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
   const user = await getCurrentUser()
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex h-screen overflow-x-hidden overflow-clip flex-col">
       <NavBar user={user} items={docsConfig.mainNav} rightElements={rightHeader()}>
         <DocsSidebarNav items={docsConfig.sidebarNav} />
       </NavBar>
-      <div className="container flex-1">{children}</div>
+      <div className="container flex-1  overflow-x-hidden">{children}</div>
       <SiteFooter className="border-t" />
     </div>
   )

@@ -47,27 +47,6 @@ export function NavBar({ user, items, children, rightElements, scroll = false }:
                 
               </p>
             </Link>
-
-          {/* <div className="flex items-center space-x-3">
-            {rightElements}
-
-            {!user ? (
-              <Link
-                href="/login"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "sm" })
-                )}
-              >
-                Login Page
-              </Link>
-            ) : null}
-
-            {user ? (
-              <UserAccountNav user={user} />
-            ) : (
-              <Button className="px-3" variant="default" size="sm" onClick={signInModal.onOpen}>Sign In</Button>
-            )}
-          </div> */}
         </div>
       </header>
   );
