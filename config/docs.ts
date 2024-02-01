@@ -38,7 +38,7 @@ export const docsConfig: DocsConfig = {
           href: "/docs/documentation/setup",
         },
         {
-          title: "Usagee",
+          title: "Usage",
           href: "/docs/documentation/usage",
         },
         {

@@ -1,0 +1,52 @@
+---
+title: Usage
+description: function helps you to dump json.
+---
+## Convert Markdown Table to JSON
+
+`md-to-jsonify` also provides a function to convert a Markdown table to JSON. Here's how you can use it:
+
+### Convert a Markdown table to JSON
+
+- The markdown content looks like this -
+
+--- 
+
+| Name  | Age | Website                |
+|-------|-----|------------------------|
+| John  | 25  | [Example Website 1](https://example.com) |
+| Alice | 30  | [Example Website 2](https://example.org) |
+
+
+```javascript
+import { extract } from 'md-to-jsonify';
+
+const markdownTable = `
+| Name  | Age | Website                |
+|-------|-----|------------------------|
+| John  | 25  | [Example Website 1](https://example.com) |
+| Alice | 30  | [Example Website 2](https://example.org) |
+`;
+
+const jsonData = extract(markdownTable);
+console.log(jsonData);
+```
+
+
+
+
+## Output
+
+```json
+[
+  {
+    "Name": "John",
+    "Age": "25",
+    "Website": "https://example.com"
+  },
+  {
+    "Name": "Alice",
+    "Age": "30",
+    "Website": "https://example.org"
+  }
+]
