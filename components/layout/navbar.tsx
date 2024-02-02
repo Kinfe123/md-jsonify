@@ -39,11 +39,11 @@ export function NavBar({ user, items, children, rightElements, scroll = false }:
               href={siteConfig.links.github}
               target="_blank"
               rel="noreferrer"
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }), "px-4")}
+              className={cn(buttonVariants({ variant: "outline", size: "lg" }), "px-4 hover:bg-gradient-to-tr hover:from-purple-400/20 hover:to-transparent rounded-xl")}
             >
               <Icons.gitHub className="mr-2 size-4" />
               <p>
-                <span className="hidden sm:inline-block">Star on</span>{" "}GitHub{" "}
+                <span className="hidden  sm:inline-block">Star on</span>{" "}GitHub{" "}
                 
               </p>
             </Link>
