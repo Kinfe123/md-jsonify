@@ -1,6 +1,6 @@
 # Contributing Guide
 
-Thank you for investing your time in contributing to our project! Any contribution you make will be reflected on [skateshop](<[skateshop.sadmn.com](https://github.com/Kinfe123/md-jsonify)>) :sparkles:.
+Thank you for investing your time in contributing to our project! Any contribution you make will be reflected on [md-jsonify](<[https://md-jsonify.vercel.app](https://github.com/Kinfe123/md-jsonify)>) :sparkles:.
 
 
 ## Technologies
