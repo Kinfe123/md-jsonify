@@ -28,7 +28,7 @@ const markdownTable = `
 | Alice | 30  | [Example Website 2](https://example.org) |
 `;
 
-const jsonData = extract(markdownTable);
+const jsonData =  await extract(markdownTable);
 console.log(jsonData);
 ```
 
