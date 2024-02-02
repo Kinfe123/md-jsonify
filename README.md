@@ -52,4 +52,6 @@ console.log('JSON data is: ' , result)
 
 I really welcome any individual who wants to participate and contribute on this project to make more stable , raise an issue and let discuss on them or send pr , i will review it anyways
 
+if you want in great detail follow this (link)['./CONTRIBUTING.md']
+
 
