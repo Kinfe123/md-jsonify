@@ -3,6 +3,16 @@
 Thank you for investing your time in contributing to our project! Any contribution you make will be reflected on [skateshop](<[skateshop.sadmn.com](https://github.com/Kinfe123/md-jsonify)>) :sparkles:.
 
 
+## Technologies
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com)
+- **ORM:** [Drizzle ORM](https://orm.drizzle.team)
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com)
+
+
 
 In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
 
