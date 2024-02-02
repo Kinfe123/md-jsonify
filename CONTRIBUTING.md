@@ -28,7 +28,7 @@ Clone your fork locally. Do not clone the original repository unless you plan to
 
 ```shell
 git clone https://github.com/Kinfe123/md-jsonify
-cd skateshop
+cd md-jsonify
 ```
 
 ### Install dependencies
@@ -93,7 +93,7 @@ Finally, open a pull request with the changes.
 
 Congratulations :tada::tada: The GitHub team thanks you :sparkles:.
 
-Once your PR is merged, your contributions will be publicly visible on the [skateshop](https://github.com/Kinfe123/md-jsonify).
+Once your PR is merged, your contributions will be publicly visible on the [md-jsonify](https://github.com/Kinfe123/md-jsonify).
 
 ### Credits
 
