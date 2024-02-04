@@ -1,12 +1,17 @@
 'use client'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import ReactMarkdown from "react-markdown";
+
 import styles from './playground.module.css'
 import { useState } from 'react'
 import { marked } from 'marked'
 import { cn } from "@/lib/utils";
+import JsonDisplay from "../json-display";
 const PlaygoundComp = () => {
     const [rawMarkdown, setRawMarkdown] = useState("");
+  
+  
+
     const [mdState, setMdState] = useState(true)
     return (
 
@@ -70,9 +75,7 @@ const PlaygoundComp = () => {
 
                     <TabsContent value="json">
 
-                        <div>
-                            Hello world this is json format 
-                        </div>
+                        <JsonDisplay md={rawMarkdown}/>
 
 
                     </TabsContent>
