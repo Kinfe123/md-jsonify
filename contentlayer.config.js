@@ -3,6 +3,8 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
+// import { codeImport } from "remark-code-import"
+import { visit } from "unist-util-visit"
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -147,6 +149,18 @@ export default makeSource({
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
+
+      () => (tree) => {
+        visit(tree, (node) => {
+          if (node?.type === "element" && node?.tagName === "pre") {
+            const [codeEl] = node.children;
+   
+            if (codeEl.tagName !== "code") return;
+   
+            node.raw = codeEl.children?.[0].value;
+          }
+        });
+      },
       rehypeSlug,
       [
         rehypePrettyCode,
@@ -177,6 +191,22 @@ export default makeSource({
           },
         },
       ],
+      
+            () => (tree) => {
+              visit(tree, (node) => {
+                if (node?.type === "element" && node?.tagName === "div") {
+                  if (!("data-rehype-pretty-code-fragment" in node.properties)) {
+                    return;
+                  }
+         
+                  for (const child of node.children) {
+                    if (child.tagName === "pre") {
+                      child.properties["raw"] = node.raw;
+                    }
+                  }
+                }
+              });
+            },
       [
         rehypeAutolinkHeadings,
         {

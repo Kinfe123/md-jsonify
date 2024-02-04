@@ -1,11 +1,16 @@
 import * as React from "react"
 import NextImage, { ImageProps } from "next/image"
 import { useMDXComponent } from "next-contentlayer/hooks"
-
+import {
+   Tabs , 
+  TabsContent,
+  TabsList,
+  TabsTrigger,   } from "../ui/tabs"
 import { cn } from "@/lib/utils"
 import { Callout } from "@/components/shared/callout"
 import { MdxCard } from "@/components/content/mdx-card"
 import CardSpotlight from "../hovery-card"
+import { Pre } from "../pre-format"
 
 const components = {
   h1: ({ className, ...props }) => (
@@ -130,15 +135,16 @@ const components = {
       {...props}
     />
   ),
-  pre: ({ className, ...props }) => (
-    <pre
-      className={cn(
-        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black p-4",
-        className
-      )}
-      {...props}
-    />
-  ),
+  pre: Pre,
+  // pre: ({ className, ...props }) => (
+  //   <pre
+  //     className={cn(
+  //       "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black p-4",
+  //       className
+  //     )}
+  //     {...props}
+  //   />
+  // ),
   code: ({ className, ...props }) => (
     <code
       className={cn(
@@ -148,6 +154,7 @@ const components = {
       {...props}
     />
   ),
+  
   Image: (props: ImageProps) => <NextImage {...props} />,
   Callout,
   Card: MdxCard,
