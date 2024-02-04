@@ -1,10 +1,10 @@
 {
-  "name": "saas-starter",
+  "name": "md-jsonify",
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "mickasmt",
-    "url": "https://twitter.com/mickasmt"
+    "name": "Kinfish",
+    "url": "https://twitter.com/KinfishT"
   },
   "scripts": {
     "dev": "next dev",
