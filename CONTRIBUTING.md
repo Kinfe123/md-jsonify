@@ -11,6 +11,7 @@ Thank you for investing your time in contributing to our project! Any contributi
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
 - **ORM:** [Drizzle ORM](https://orm.drizzle.team)
 - **UI Components:** [shadcn/ui](https://ui.shadcn.com)
+- **Framer**[Motion Framer](https://framer.com)
 
 
 
