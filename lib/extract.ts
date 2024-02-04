@@ -49,6 +49,7 @@ export function extract(rawData) {
         }
         counter += 1;
       }
+    //   @ts-ignore
       result.push(JSON.stringify(currentObj));
   
     
