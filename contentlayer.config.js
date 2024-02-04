@@ -1,11 +1,12 @@
+import path from 'path'
 import { defineDocumentType, makeSource } from "contentlayer/source-files"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
-// import { codeImport } from "remark-code-import"
+import {codeImport} from 'remark-code-import'
+import { getHighlighter, loadTheme ,  } from "shiki"
 import { visit } from "unist-util-visit"
-
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
   slug: {
@@ -147,25 +148,38 @@ export default makeSource({
   contentDirPath: "./content",
   documentTypes: [Page, Doc, Guide, Post, Author],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [
-
+      rehypeSlug,
+      // rehypeComponent,
       () => (tree) => {
         visit(tree, (node) => {
           if (node?.type === "element" && node?.tagName === "pre") {
-            const [codeEl] = node.children;
-   
-            if (codeEl.tagName !== "code") return;
-   
-            node.raw = codeEl.children?.[0].value;
+            const [codeEl] = node.children
+            if (codeEl.tagName !== "code") {
+              return
+            }
+
+            if (codeEl.data?.meta) {
+              // Extract event from meta and pass it down the tree.
+              const regex = /event="([^"]*)"/
+              const match = codeEl.data?.meta.match(regex)
+              if (match) {
+                node.__event__ = match ? match[1] : null
+                codeEl.data.meta = codeEl.data.meta.replace(regex, "")
+              }
+            }
+
+            node.__rawString__ = codeEl.children?.[0].value
+            node.__src__ = node.properties?.__src__
+            node.__style__ = node.properties?.__style__
           }
-        });
+        })
       },
-      rehypeSlug,
       [
         rehypePrettyCode,
         {
-          theme: "github-dark",
+          // theme:"default",
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
@@ -174,39 +188,44 @@ export default makeSource({
             }
           },
           onVisitHighlightedLine(node) {
-            // node.properties.className.push("line--highlighted")
-
-            // FIX: I changed remark-gmf 4.0.0 to 3.0.1 (return a lot errors in mdx?)
-            // And solve error on onVisitHighlightedLine with code from : https://stackoverflow.com/questions/76549262/onvisithighlightedline-cannot-push-classname-using-rehype-pretty-code
-            const nodeClass = node.properties.className;
-
-            if (nodeClass && nodeClass.length > 0) {
-                node.properties.className.push("line--highlighted");
-            }else{
-                node.properties.className = ["line--highlighted"];
-            }
+            node.properties.className.push("line--highlighted")
           },
           onVisitHighlightedWord(node) {
             node.properties.className = ["word--highlighted"]
           },
         },
       ],
-      
-            () => (tree) => {
-              visit(tree, (node) => {
-                if (node?.type === "element" && node?.tagName === "div") {
-                  if (!("data-rehype-pretty-code-fragment" in node.properties)) {
-                    return;
-                  }
-         
-                  for (const child of node.children) {
-                    if (child.tagName === "pre") {
-                      child.properties["raw"] = node.raw;
-                    }
-                  }
-                }
-              });
-            },
+      () => (tree) => {
+        visit(tree, (node) => {
+          if (node?.type === "element" && node?.tagName === "div") {
+            if (!("data-rehype-pretty-code-fragment" in node.properties)) {
+              return
+            }
+
+            const preElement = node.children.at(-1)
+            if (preElement.tagName !== "pre") {
+              return
+            }
+
+            preElement.properties["__withMeta__"] =
+              node.children.at(0).tagName === "div"
+            preElement.properties["__rawString__"] = node.__rawString__
+
+            if (node.__src__) {
+              preElement.properties["__src__"] = node.__src__
+            }
+
+            if (node.__event__) {
+              preElement.properties["__event__"] = node.__event__
+            }
+
+            if (node.__style__) {
+              preElement.properties["__style__"] = node.__style__
+            }
+          }
+        })
+      },
+      // rehypeNpmCommand,
       [
         rehypeAutolinkHeadings,
         {
