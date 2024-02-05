@@ -11,6 +11,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useSigninModal } from "@/hooks/use-signin-modal";
 import { Icons } from "../shared/icons";
+import { ModeToggle } from "./mode-toggle";
 
 
 interface NavBarProps {
@@ -34,6 +35,7 @@ export function NavBar({ user, items, children, rightElements, scroll = false }:
       >
         <div className="container flex h-16 items-center justify-between py-4">
           <MainNav items={items}>{children}</MainNav>
+          <div className='flex justify-center gap-10 items-center'>
 
           <Link
               href={siteConfig.links.github}
@@ -47,6 +49,8 @@ export function NavBar({ user, items, children, rightElements, scroll = false }:
                 
               </p>
             </Link>
+            <ModeToggle />
+              </div>
         </div>
       </header>
   );

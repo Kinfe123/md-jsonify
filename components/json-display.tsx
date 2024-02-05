@@ -1,11 +1,11 @@
-import { CopyBlock  , github} from 'react-code-blocks';
 
 import { extract } from "@/lib/extract"
+import JsonHighlighter from "./json-beauty"
 
 const JsonDisplay = (props: { md: string }) => {
     // @ts-nocheck
     const parsed = extract(props.md)
-    console.log('The parsed one is: ', parsed)
+    const trimmed =  parsed.toString().trim()
     return (
         <div className='mt-5'>
             {/* <CopyBlock
@@ -17,9 +17,10 @@ const JsonDisplay = (props: { md: string }) => {
                 
 
             /> */}
-            <pre className=''>
+            <JsonHighlighter data={parsed}/>
+            {/* <pre className=''>
                 {parsed}
-            </pre>
+            </pre> */}
 
         </div>
     )
