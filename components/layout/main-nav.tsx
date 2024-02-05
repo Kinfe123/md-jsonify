@@ -9,6 +9,7 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/shared/icons"
 import { MobileNav } from "@/components/layout/mobile-nav"
+import { Badge } from "../ui/badge"
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -45,7 +46,12 @@ export function MainNav({ items, children }: MainNavProps) {
           {siteConfig.name}
         </span>
       </Link>
-      
+      <div className="relative mr-3">
+        
+      <Badge variant="outline" className="absolute top-[-12px] right-[-36px]">New</Badge>
+        <p>Playground</p>
+
+      </div>
       {items?.length ? (
         <nav className="hidden gap-6 md:flex">
           {items?.map((item, index) => (
