@@ -66,6 +66,40 @@ export const Guide = defineDocumentType(() => ({
   },
   computedFields,
 }))
+export const Changelog = defineDocumentType(() => ({
+  name: "Changelog",
+  filePathPattern: "changelog/**/*.mdx",
+  contentType: "mdx",
+  fields: {
+      title: {
+          type: "string",
+          required: true,
+      },
+      date: {
+          type: "string",
+          required: true,
+      },
+      summary: {
+          type: "string",
+          required: true,
+      },
+      image: {
+          type: "string",
+          required: true,
+      },
+      authors: {
+        type: "list",
+        of: { type: "string" },
+        required: true,
+      },
+      draft: {
+          type: "boolean",
+          default: false,
+      },
+  },
+
+  computedFields,
+}));
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
