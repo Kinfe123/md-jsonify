@@ -87,6 +87,10 @@ export const Changelog = defineDocumentType(() => ({
           type: "string",
           required: true,
       },
+      kind: {
+        type: "string",
+        required: false,
+    },
       authors: {
         type: "list",
         of: { type: "string" },
