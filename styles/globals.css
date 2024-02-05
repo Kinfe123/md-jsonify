@@ -56,10 +56,11 @@
 
   }
   body {
-    @apply bg-red-900 text-foreground;
+    @apply bg-transparent text-foreground;
     margin: 0;
     padding: 0;
     font-feature-settings: "rlig" 1, "calt" 1;
+    height: 100%;
 
   }
 }

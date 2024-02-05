@@ -8,7 +8,7 @@ import { Mdx } from "./content/mdx-components"
 
 
 const ChangelogDisplay = () => {
-    console.log("THe changelogs: ", allChangelogs)
+
     return (
         <TracingBeam className="h-screen ">
 
