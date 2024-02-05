@@ -7,7 +7,8 @@ export const metadata = {
 }
 async function Playground() {
     return (
-        <div className="h-screen">
+        <div className="h-screen bg-fixed bg-transparent
+        ">
             <PlaygoundComp />
         </div>
 

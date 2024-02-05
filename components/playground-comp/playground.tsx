@@ -35,7 +35,7 @@ const PlaygoundComp = () => {
 
             <Tabs defaultValue="markdown">
 
-                <div className="mx-auto flex items-center justify-center">
+                <div className="mx-auto flex items-center justify-center mb-4">
                     <TabsList>
                         <TabsTrigger value="markdown">Markdown</TabsTrigger>
                         <TabsTrigger value="json">JSON</TabsTrigger>
@@ -77,7 +77,7 @@ const PlaygoundComp = () => {
                     </TabsContent>
 
                     <TabsContent value="json">
-                        <div className={cn(styles.markdown_output_container, 'prose prose-p:text-black dark:prose-p:text-white  prose-h1:text-black dark:prose-h1:text-white  prose-h2:text-black dark:prose-h2:text-white prose-h3:text-black dark:prose-h3:text-white prose-h4:text-black dark:prose-h4:text-white prose-h5:text-black dark:prose-h5:text-white  prose-h6:text-black dark:prose-h6:text-white prose-th:text-black dark:prose-th:text-white prose-tr:text-black dark:prose-tr:text-white prose-a:text-black dark:prose-a:text-white text-white')}>
+                        <div className={cn(styles.markdown_output_container, 'mt-[-15px] prose prose-p:text-black dark:prose-p:text-white  prose-h1:text-black dark:prose-h1:text-white  prose-h2:text-black dark:prose-h2:text-white prose-h3:text-black dark:prose-h3:text-white prose-h4:text-black dark:prose-h4:text-white prose-h5:text-black dark:prose-h5:text-white  prose-h6:text-black dark:prose-h6:text-white prose-th:text-black dark:prose-th:text-white prose-tr:text-black dark:prose-tr:text-white prose-a:text-black dark:prose-a:text-white text-white')}>
                             <div className={cn(styles.markdown_output)}>
 
                                 <JsonDisplay md={rawMarkdown} />
