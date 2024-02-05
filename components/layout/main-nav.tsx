@@ -49,7 +49,7 @@ export function MainNav({ items, children }: MainNavProps) {
       <div className="relative mr-3">
         
       <Badge variant="outline" className="absolute top-[-12px] right-[-36px]">New</Badge>
-        <p>Playground</p>
+        <Link href='/playground' className="">Playground</Link>
 
       </div>
       {items?.length ? (
