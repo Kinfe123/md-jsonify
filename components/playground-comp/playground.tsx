@@ -16,7 +16,7 @@ const PlaygoundComp = () => {
     return (
 
         <div>
-            <div className="flex max-w-[68rem] mx-auto mt-32 text-center flex-col items-center ">
+            <div className="flex  bg-cover  max-w-[68rem] mx-auto mt-32 text-center flex-col items-center ">
                 <h1
                     className="animate-fade-up text-balance  mb-10 font-urban text-4xl font-extrabold tracking-tight opacity-0 sm:text-5xl md:text-6xl lg:text-7xl"
                     style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
@@ -47,7 +47,7 @@ const PlaygoundComp = () => {
 
 
 
-                <div className={cn(styles.outer_container)}>
+                <div className={cn(styles.outer_container , 'justify-center mx-0')}>
 
 
                     <div className={cn(styles.raw_input_container)}>

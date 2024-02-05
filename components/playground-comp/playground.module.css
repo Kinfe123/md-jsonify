@@ -8,12 +8,16 @@
     display: flex;
     flex-direction: row;
     row-gap: 1rem;
+    
+    /* justify-content: center; */
+    /* align-items: center; */
+    
   }
   
   .raw_input_container {
-    width: 50vw;
+    width: 42vw;
     height: 100%;
-  
+    margin-left: -120px;
     padding: 1rem;
   }
   
@@ -29,6 +33,6 @@
   }
   
   .markdown_output {
-    width: 100%;
+    width: 42vw;
     height: 100%;
   }

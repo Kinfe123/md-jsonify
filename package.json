@@ -66,6 +66,7 @@
     "concurrently": "^8.2.2",
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
+    "json-beautify": "^1.1.1",
     "lucide-react": "^0.294.0",
     "marked": "^12.0.0",
     "md-to-jsonify": "^1.0.9",

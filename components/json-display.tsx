@@ -4,7 +4,7 @@
 import { extract } from "@/lib/extract"
 import { useState } from 'react'
 
-import { Check, CheckCheck, CopyIcon } from "lucide-react"
+import { Check, CopyIcon } from "lucide-react"
 import { prettyPrintJson, FormatOptions } from 'pretty-print-json'
 
 const JsonDisplay = (props: { md: string }) => {
@@ -12,6 +12,7 @@ const JsonDisplay = (props: { md: string }) => {
     const [text, setText] = useState('')
     // @ts-nocheck
     const parsed = extract(props.md)
+    const parsidified = JSON.stringify(parsed).replace(/\\/g, '')
     const trimmed = parsed.toString().trim()
     const result = prettyPrintJson.toHtml(parsed)
     const copied = async () => {
@@ -23,7 +24,7 @@ const JsonDisplay = (props: { md: string }) => {
         }, 2000);
     };
 
-    console.log('The final is: ', parsed)
+
     return (
         <div className='mt-[-10px]'>
 
