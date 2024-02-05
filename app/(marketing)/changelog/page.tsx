@@ -1,7 +1,7 @@
 import ChangelogDisplay from "@/components/changelog-display";
 export const metadata = {
     title: "Changelog",
-    description:"Changes and all jazzes will dumped here"
+    description: "Changes and all jazzes will dumped here"
 }
 
 const ChangeLogPage = () => {
@@ -45,8 +45,6 @@ const ChangeLogPage = () => {
 
 
                 </div>
-
-
             </section>
 
 
