@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { TracingBeam } from "./tracing-log"
-import { cn } from "@/lib/utils"
+import { cn, formatDate } from "@/lib/utils"
 import { allChangelogs } from "@/.contentlayer/generated"
 import { Mdx } from "./content/mdx-components"
 
@@ -13,11 +13,14 @@ const ChangelogDisplay = () => {
             {allChangelogs.map((item, index) => (
                 <div key={`content-${index}`} className="mb-10">
                     <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
-                        {item.kind}
+                    {formatDate( item.date)} -   {item.kind}
                     </h2>
 
-                    <p className={cn("text-xl mb-4")}>
+                    <p className={cn("text-xl mb-1")}>
                         {item.title}
+                    </p>
+                    <p className={cn("text-md mb-4 text-gray-400/90")}>
+                        {item.summary}
                     </p>
 
                     <div className="text-sm  prose prose-sm dark:prose-invert">
@@ -27,7 +30,7 @@ const ChangelogDisplay = () => {
                                 alt="changelog thumbnail"
                                 height="1000"
                                 width="1000"
-                                className="rounded-lg mb-10 object-cover"
+                                className="rounded-lg mb-10 object-cover w-full"
                             />
                         )}
                         <Mdx code={item.body.code} />
