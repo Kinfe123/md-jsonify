@@ -29,24 +29,17 @@ export default async function IndexPage() {
     <>
       <section className="space-y-6 pb-12 pt-16 lg:py-28">
         <div className="container flex max-w-[64rem] flex-col items-center gap-5 text-center">
-          {/* <Link
-            href="https://twitter.com/KinfishT/status/1719892161095745801"
-            className={cn(buttonVariants({ variant: "outline", size: "sm" }), "animate-fade-up opacity-0")}
-            style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
-            target="_blank"
-          >
-            Introducing on <Icons.twitter className="ml-2 size-4" />
-          </Link> */}
 
-          <Feeder feed="Introducting MD-JSONIFY" link="https://twitter.com/KinfishT"/>
+
+          <Feeder feed="Introducting MD-JSONIFY" link="https://twitter.com/KinfishT" />
 
           <h1
             className="animate-fade-up text-balance font-urban text-4xl font-extrabold tracking-tight opacity-0 sm:text-5xl md:text-6xl lg:text-7xl"
             style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
           >
-             Effortlessly Transmuting Markdown into
+            Effortlessly Transmuting Markdown into
             <span className="text-gradient_indigo-purple font-extrabold">
-            JSON Brilliance
+              JSON Brilliance
             </span>
           </h1>
 
@@ -54,27 +47,24 @@ export default async function IndexPage() {
             className="max-w-[42rem] animate-fade-up text-balance leading-normal text-muted-foreground opacity-0 sm:text-xl sm:leading-8"
             style={{ animationDelay: "0.35s", animationFillMode: "forwards" }}
           >
-          {siteConfig.description}
+            {siteConfig.description}
           </p>
 
           <div
             className="flex animate-fade-up justify-center space-x-2 opacity-0 md:space-x-4"
             style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
           >
-            {/* <Link href="/docs" className={cn(buttonVariants({ size: "lg" }))}>
-              Get Started
-            </Link> */}
             <GetStarted />
-            
-          </div>  
 
-         
+          </div>
+
+
         </div>
 
-          
+
       </section>
 
-     
+
     </>
   )
 }

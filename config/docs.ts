@@ -26,7 +26,7 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Introduction",
-          href: "/docs/documentation",
+          href: "/docs/documentation",  
         },
         // {
         //   title: "Contentlayer",
@@ -43,8 +43,8 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Playground",
-          href: "/docs/documentation/playground",
-          disabled:true,
+          href: "/playground",
+         
         },
       ],
     },

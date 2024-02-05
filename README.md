@@ -16,7 +16,15 @@ npm i md-to-jsonify
 ## Usage 
 
 ```jsx 
-import {extract , extractFromLink} from 'md-to-jsonify'
+
+
+//extracting from markdown string
+import {extract ,extractFromString , extractFromLink} from 'md-to-jsonify'
+
+const result = extractFromString(markdownTable)
+console.log('The JSON data : ' , result)
+
+
 
 
 // extracting from the relative path in file system
