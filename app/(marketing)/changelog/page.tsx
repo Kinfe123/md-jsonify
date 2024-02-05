@@ -1,8 +1,8 @@
 import ChangelogDisplay from "@/components/changelog-display";
-import { TracingBeam } from "@/components/tracing-log";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
+export const metadata = {
+    title: "Changelog",
+    description:"Changes and all jazzes will dumped here"
+}
 
 const ChangeLogPage = () => {
     return (

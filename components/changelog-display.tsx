@@ -6,10 +6,7 @@ import { Mdx } from "./content/mdx-components"
 
 
 
-export const metadata = {
-    title: "Changelog",
-    description:"Changes and all jazzes will dumped here"
-}
+
 const ChangelogDisplay = () => {
     console.log("THe changelogs: ", allChangelogs)
     return (

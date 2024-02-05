@@ -18,9 +18,9 @@ npm i md-to-jsonify
 ```jsx 
 
 
-//extracting from markdown string
 import {extract ,extractFromString , extractFromLink} from 'md-to-jsonify'
 
+//extracting from markdown string
 const result = extractFromString(markdownTable)
 console.log('The JSON data : ' , result)
 
