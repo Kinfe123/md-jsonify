@@ -2,6 +2,7 @@ import Image from "next/image"
 import { TracingBeam } from "./tracing-log"
 import { cn } from "@/lib/utils"
 import { allChangelogs } from "@/.contentlayer/generated"
+import { Mdx } from "./content/mdx-components"
 
 const ChangelogDisplay = () => {
     console.log("THe changelogs: ", allChangelogs)
@@ -9,10 +10,10 @@ const ChangelogDisplay = () => {
         <TracingBeam className="h-screen ">
 
         <div className="max-w-2xl mx-auto antialiased pt-4 relative">
-            {dummyContent.map((item, index) => (
+            {allChangelogs.map((item, index) => (
                 <div key={`content-${index}`} className="mb-10">
                     <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
-                        {item.badge}
+                        {item.kind}
                     </h2>
 
                     <p className={cn("text-xl mb-4")}>
@@ -23,13 +24,13 @@ const ChangelogDisplay = () => {
                         {item?.image && (
                             <Image
                                 src={item.image}
-                                alt="blog thumbnail"
+                                alt="changelog thumbnail"
                                 height="1000"
                                 width="1000"
                                 className="rounded-lg mb-10 object-cover"
                             />
                         )}
-                        {item.description}
+                        <Mdx code={item.body.code} />
                     </div>
                 </div>
             ))}
