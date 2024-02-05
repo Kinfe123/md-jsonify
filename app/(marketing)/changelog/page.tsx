@@ -1,15 +1,15 @@
 import ChangelogDisplay from "@/components/changelog-display";
-import { TracingBeam } from "@/components/tracing-log";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
+export const metadata = {
+    title: "Changelog",
+    description: "Changes and all jazzes will dumped here"
+}
 
 const ChangeLogPage = () => {
     return (
-        <div className="h-screen">
+        <div className="h-full w-full">
 
             <div className="hidden dark:flex">
-                <div className="absolute  bottom-0 top-0 z-[-2] h-screen overflow-hidden  bg-fixed  w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+                <div className="absolute  bottom-0 left-0 top-0 z-[-2] h-screen overflow-hidden  bg-fixed  w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
 
                 </div>
             </div>
@@ -45,8 +45,6 @@ const ChangeLogPage = () => {
 
 
                 </div>
-
-
             </section>
 
 
