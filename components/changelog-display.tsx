@@ -1,8 +1,10 @@
 import Image from "next/image"
 import { TracingBeam } from "./tracing-log"
 import { cn } from "@/lib/utils"
+import { allChangelogs } from "@/.contentlayer/generated"
 
 const ChangelogDisplay = () => {
+    console.log("THe changelogs: ", allChangelogs)
     return (
         <TracingBeam className="h-screen ">
 
