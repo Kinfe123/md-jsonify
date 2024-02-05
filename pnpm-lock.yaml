@@ -164,6 +164,9 @@ dependencies:
   nodemailer:
     specifier: ^6.9.7
     version: 6.9.7
+  pretty-print-json:
+    specifier: ^3.0.0
+    version: 3.0.0
   prop-types:
     specifier: ^15.8.1
     version: 15.8.1
@@ -8588,6 +8591,10 @@ packages:
 
   /pretty-format@3.8.0:
     resolution: {integrity: sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==}
+    dev: false
+
+  /pretty-print-json@3.0.0:
+    resolution: {integrity: sha512-1993HBv7RNqoPNgaajOK3RLm544t3jongECDFw6Y5faYiBeg2tg62jDT1EDmXRRDn296ykH49A8tphkQBHUSTA==}
     dev: false
 
   /pretty-quick@3.1.3(prettier@3.1.1):

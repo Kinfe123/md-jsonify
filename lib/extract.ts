@@ -50,7 +50,7 @@ export function extract(rawData) {
         counter += 1;
       }
 
-      result.push(JSON.stringify(currentObj));
+      result.push(currentObj);
   
     
     }

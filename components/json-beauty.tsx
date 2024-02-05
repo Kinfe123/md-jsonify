@@ -14,7 +14,10 @@ const JsonHighlighter = ({ data }) => {
           background: 'transparent';
         }   
       `}</style>
+    <pre>
+
       <JSONPretty id="json-pretty" data={data}></JSONPretty>
+    </pre>
     </div>
   );
 };

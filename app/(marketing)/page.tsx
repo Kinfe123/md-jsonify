@@ -4,8 +4,10 @@ import { siteConfig } from "@/config/site"
 import Feeder from "@/components/feeder"
 import GetStarted from "@/components/gradient-btn"
 
+
 export default async function IndexPage() {
   const stars = 100
+
   // const { stargazers_count: stars } = await fetch(
   //   "https://api.github.com/repos/Kinfe123/md-to-json",
   //   {
@@ -65,6 +67,8 @@ export default async function IndexPage() {
             <GetStarted />
             
           </div>  
+
+         
         </div>
 
           
