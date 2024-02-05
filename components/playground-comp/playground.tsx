@@ -53,7 +53,7 @@ const PlaygoundComp = () => {
                     <div className={cn(styles.raw_input_container)}>
 
                         <textarea
-                            className={cn(styles.raw_input, 'animate-background-shine font-mono p-10 bg-neutral-950 rounded-2xl border-[2px] border-purple-300/10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] to-transparent')}
+                            className={cn(styles.raw_input, 'animate-background-shine font-mono p-10 bg-neutral-950 rounded-2xl border-[2px] border-purple-300/10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] to-transparent text-white')}
                             name="rawMarkdown"
                             id="rawMarkdown"
                             placeholder="Enter your markdown here..."
