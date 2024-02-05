@@ -56,7 +56,7 @@
 
   }
   body {
-    @apply bg-transparent text-foreground;
+    @apply bg-red-900 text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
 
   }
