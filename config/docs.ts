@@ -26,7 +26,7 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Introduction",
-          href: "/docs/documentation",
+          href: "/docs/documentation",  
         },
         // {
         //   title: "Contentlayer",
