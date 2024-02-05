@@ -32,7 +32,7 @@ const ChangeLogPage = () => {
                         className=" text-right animate-fade-up text-balance leading-normal text-muted-foreground opacity-0 sm:text-xl sm:leading-8"
                         style={{ animationDelay: "0.35s", animationFillMode: "forwards" }}
                     >
-                        We will update your on our iterations.
+                        We will update you on our iterations.
                     </p>
 
                     <div
