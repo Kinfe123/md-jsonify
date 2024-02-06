@@ -13,6 +13,29 @@ interface AuthorProps {
 }
 
 
+type AuthorTypeProps = {
+    title: string;
+    avatar: string;
+    designation: string;
+    twitter: string;
+    body: {
+        raw: string;
+        code: string;
+    };
+    _id: string;
+    _raw: {
+        sourceFilePath: string;
+        sourceFileName: string;
+        sourceFileDir: string;
+        contentType: string;
+        flattenedPath: string;
+    };
+    type: string;
+    slug: string;
+    slugAsParams: string;
+
+}
+
 type changelogPost = {
     title: string;
     date: string;
@@ -46,7 +69,7 @@ type ChangelogProps = {
 const ChangeLogCard = ({ index, item }: ChangelogProps) => {
     const authorsLists = allChangelogs.map((a) => a.authors)[0]
     // console.log('Authorlsits; ' , authorsLists)
-    const metaDataOfAuthor = []
+    const metaDataOfAuthor: AuthorTypeProps[] = []
     for (let eachAuthor of authorsLists) {
         allAuthors.map((author) => {
             if (author.title === eachAuthor) {
