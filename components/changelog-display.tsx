@@ -1,45 +1,30 @@
 import Image from "next/image"
 import { TracingBeam } from "./tracing-log"
 import { cn, formatDate } from "@/lib/utils"
-import { allChangelogs, allAuthors } from "@/.contentlayer/generated"
+import { allChangelogs, allAuthors  } from "@/.contentlayer/generated"
 import { Mdx } from "./content/mdx-components"
+import ChangeLogCard from "./changelog-card"
 
 
 
 
 const ChangelogDisplay = () => {
-    console.log('All the author: ' , allAuthors)
+
+    const authorsLists = allChangelogs.map((a)=>a.authors)
+    
+    // const author = allChangelogs.map((a) => {
+    //     allAuthors.find(({slug}) => slug === `/authors/${a.authors.map(a )}`)
+    // })
+
+    console.log("the author lists; " , authorsLists)
+    
 
     return (
         <TracingBeam className="h-screen ">
 
         <div className="max-w-2xl mx-auto antialiased pt-4 relative">
             {allChangelogs.map((item, index) => (
-                <div key={`content-${index}`} className="mb-10">
-                    <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
-                    {formatDate( item.date)} -   {item.kind}
-                    </h2>
-
-                    <p className={cn("text-xl mb-1")}>
-                        {item.title}
-                    </p>
-                    <p className={cn("text-md mb-4 text-gray-400/90")}>
-                        {item.summary}
-                    </p>
-
-                    <div className="text-sm  prose prose-sm dark:prose-invert">
-                        {item?.image && (
-                            <Image
-                                src={item.image}
-                                alt="changelog thumbnail"
-                                height="1000"
-                                width="1000"
-                                className="rounded-lg mb-10 object-cover w-full"
-                            />
-                        )}
-                        <Mdx code={item.body.code} />
-                    </div>
-                </div>
+                <ChangeLogCard item={item} index={index}/>
             ))}
         </div>
     </TracingBeam>
