@@ -1,13 +1,14 @@
 import Image from "next/image"
 import { TracingBeam } from "./tracing-log"
 import { cn, formatDate } from "@/lib/utils"
-import { allChangelogs } from "@/.contentlayer/generated"
+import { allChangelogs, allAuthors } from "@/.contentlayer/generated"
 import { Mdx } from "./content/mdx-components"
 
 
 
 
 const ChangelogDisplay = () => {
+    console.log('All the author: ' , allAuthors)
 
     return (
         <TracingBeam className="h-screen ">
