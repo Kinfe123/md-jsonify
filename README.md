@@ -38,7 +38,6 @@ console.log('JSON data is : ' , result)
 const apiUrl = "https://api.github.com/repos/workos/awesome-developer-experience/git/blobs/{sha}"
 // the way to get the this is by going to the url - https://api.github.com/repos/workos/awesome-developer-experience/git/trees/master
 // from the above link you will get the sha from the endpiont 
-
 const result = await extractFromLink(apiUrl)
 console.log('JSON data is: ' , result)
 ```
