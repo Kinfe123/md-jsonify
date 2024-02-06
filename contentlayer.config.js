@@ -158,6 +158,10 @@ export const Author = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    designation: {
+      type: "string",
+      required: true,
+    },
     twitter: {
       type: "string",
       required: true,

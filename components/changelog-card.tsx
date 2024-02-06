@@ -1,13 +1,24 @@
-import { formatDate , cn } from "@/lib/utils"
+
+import { formatDate, cn } from "@/lib/utils"
 import { Mdx } from "./content/mdx-components"
 import Image from 'next/image'
+import { allAuthors, allChangelogs } from "@/.contentlayer/generated";
+import { AnimatedTooltip } from "./animated-tooltip";
+
+interface AuthorProps {
+    id: string;
+    name: string;
+    designation: string;
+    image: string;
+}
+
 
 type changelogPost = {
     title: string;
     date: string;
     summary: string;
     image: string;
-    kind?: string  | undefined;
+    kind?: string | undefined;
     authors: string[];
     draft: boolean | undefined;
     body: {
@@ -33,8 +44,36 @@ type ChangelogProps = {
 }
 
 const ChangeLogCard = ({ index, item }: ChangelogProps) => {
-    console.log('The itms receeived : ', item)
-    console.log('the index: ', index)
+    const authorsLists = allChangelogs.map((a) => a.authors)[0]
+    // console.log('Authorlsits; ' , authorsLists)
+    const metaDataOfAuthor = []
+    for (let eachAuthor of authorsLists) {
+        allAuthors.map((author) => {
+            if (author.title === eachAuthor) {
+                // @ts-ignore
+                metaDataOfAuthor.push(author)
+            }
+        })
+
+    }
+    const parseData = () => {
+        const authorsFmt: AuthorProps[] = []
+        metaDataOfAuthor.map((au) => {
+
+            let user = {
+                id: au!._id,
+                designation: au!.designation,
+                image: au.avatar,
+                name: au.title
+
+
+            }
+            authorsFmt.push(user)
+        })
+        return authorsFmt
+    }
+    const parsedFmt = parseData()
+    console.log('the list of author : ', parsedFmt)
     return (
         <div key={`content-${index}`} className="mb-10">
             <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
@@ -58,6 +97,10 @@ const ChangeLogCard = ({ index, item }: ChangelogProps) => {
                         className="rounded-lg mb-10 object-cover w-full"
                     />
                 )}
+                <div className="h-15 mt-10  mb-2 w-full relative">
+                    <AnimatedTooltip items={parsedFmt} />
+
+                </div>
                 <Mdx code={item.body.code} />
             </div>
         </div>
