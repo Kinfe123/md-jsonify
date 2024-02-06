@@ -96,7 +96,6 @@ const ChangeLogCard = ({ index, item }: ChangelogProps) => {
         return authorsFmt
     }
     const parsedFmt = parseData()
-    console.log('the list of author : ', parsedFmt)
     return (
         <div key={`content-${index}`} className="mb-10">
             <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
