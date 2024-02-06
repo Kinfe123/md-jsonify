@@ -10,6 +10,7 @@ interface AuthorProps {
     name: string;
     designation: string;
     image: string;
+    link: string;
 }
 
 
@@ -87,7 +88,9 @@ const ChangeLogCard = ({ index, item }: ChangelogProps) => {
                 id: au!._id,
                 designation: au!.designation,
                 image: au.avatar,
-                name: au.title
+                name: au.title,
+                link: au.twitter,
+
 
 
             }
