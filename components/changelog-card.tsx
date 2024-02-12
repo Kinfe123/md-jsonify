@@ -105,7 +105,7 @@ const ChangeLogCard = ({ index, item }: ChangelogProps) => {
                 {formatDate(item.date)} -   {item.kind}
             </h2>
 
-            <p className={cn("text-xl mb-1")}>
+            <p className={cn("text-4xl font-heading mb-1")}>
                 {item.title}
             </p>
             <p className={cn("text-md mb-4 text-gray-400/90")}>
