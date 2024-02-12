@@ -63,6 +63,7 @@
 @layer base {
   * {
     @apply border-border;
+  
 
   }
   body {
