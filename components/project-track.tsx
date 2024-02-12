@@ -33,7 +33,7 @@ export const Board = () => {
                 cards={cards}
                 setCards={setCards}
             />
-    
+
             <Column
                 title="Complete"
                 column="done"
@@ -63,7 +63,7 @@ const Column = ({ title, headingColor, cards, column, setCards }) => {
         const { element } = getNearestIndicator(e, indicators);
 
         const before = element.dataset.before || "-1";
-        
+
 
         if (before !== cardId) {
             let copy = [...cards];
@@ -71,10 +71,10 @@ const Column = ({ title, headingColor, cards, column, setCards }) => {
             let cardToTransfer = copy.find((c) => c.id === cardId);
             if (!cardToTransfer) return;
             cardToTransfer = { ...cardToTransfer, column };
-            console.log('THe card transfer is : ' , cardToTransfer)
+            console.log('THe card transfer is : ', cardToTransfer)
 
             copy = copy.filter((c) => c.id !== cardId);
-            console.log('THe copy : ' , copy)
+            console.log('THe copy : ', copy)
             const moveToBack = before === "-1";
 
             if (moveToBack) {
@@ -82,7 +82,7 @@ const Column = ({ title, headingColor, cards, column, setCards }) => {
             } else {
                 const insertAtIndex = copy.findIndex((el) => el.id === before);
                 if (insertAtIndex === undefined) return;
-                console.log('The index is: ' , insertAtIndex)
+                console.log('The index is: ', insertAtIndex)
                 copy.splice(insertAtIndex, 0, cardToTransfer);
             }
 
@@ -179,12 +179,12 @@ const Card = ({ title, id, column, handleDragStart }) => {
     return (
         <>
             <DropIndicator beforeId={id} column={column} />
-            <DraggableCard  layout
-                    layoutId={id}
-                    draggable="true"
-                    title={title}
-                    onDragStart={(e) => handleDragStart(e, { title, id, column })}
-                    className="cursor-grab bg-inherit  p-3 active:cursor-grabbing"/>
+            <DraggableCard layout
+                layoutId={id}
+                draggable="true"
+                title={title}
+                onDragStart={(e) => handleDragStart(e, { title, id, column })}
+                className="cursor-grab bg-inherit  p-3 active:cursor-grabbing" />
             {/* <DraggableCard >
                 <motion.div
                     layout
@@ -236,8 +236,8 @@ const BurnBarrel = ({ setCards }) => {
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             className={`mt-10 grid h-56 w-56 shrink-0 place-content-center rounded border text-3xl ${active
-                    ? "border-red-800 bg-red-800/20 text-red-500"
-                    : "border-neutral-500 bg-neutral-500/20 text-neutral-500"
+                ? "border-red-800 bg-red-800/20 text-red-500"
+                : "border-neutral-500 bg-neutral-500/20 text-neutral-500"
                 }`}
         >
             {active ? <Delete className="animate-bounce" /> : <Trash />}
@@ -287,7 +287,7 @@ const AddCard = ({ column, setCards }) => {
                             className="flex items-center gap-1.5 rounded bg-neutral-50 px-3 py-1.5 text-xs text-neutral-950 transition-colors hover:bg-neutral-300"
                         >
                             <span>Add</span>
-                            <Plus  />
+                            <Plus />
                         </button>
                     </div>
                 </motion.form>
@@ -298,7 +298,7 @@ const AddCard = ({ column, setCards }) => {
                     className="flex w-full items-center gap-1.5 px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:text-neutral-50"
                 >
                     <span>Add card</span>
-                    <Plus  />
+                    <Plus />
                 </motion.button>
             )}
         </>
