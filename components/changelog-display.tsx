@@ -22,7 +22,7 @@ const ChangelogDisplay = () => {
     return (
         <TracingBeam className="h-screen bg-transparent ">
 
-        <div className="max-w-2xl mx-auto antialiased pt-4 relative">
+        <div className="max-w-full mx-auto antialiased pt-4 relative">
             {allChangelogs.map((item, index) => (
                 <ChangeLogCard item={item} index={index}/>
             ))}
