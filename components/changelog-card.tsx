@@ -101,11 +101,11 @@ const ChangeLogCard = ({ index, item }: ChangelogProps) => {
     const parsedFmt = parseData()
     return (
         <div key={`content-${index}`} className="mb-10">
-            <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+            <h2 className="text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
                 {formatDate(item.date)} -   {item.kind}
             </h2>
 
-            <p className={cn("text-xl mb-1")}>
+            <p className={cn("text-4xl font-heading mb-1")}>
                 {item.title}
             </p>
             <p className={cn("text-md mb-4 text-gray-400/90")}>
