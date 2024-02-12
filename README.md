@@ -25,7 +25,31 @@ const result = extractFromString(markdownTable)
 console.log('The JSON data : ' , result)
 
 
+// extracting from full text 
+const markDownString =  `
+# Title
 
+Some text...
+
+| Name  | Age | Email             |
+|-------|-----|-------------------|
+| Chandler  | 25  | john@example.com  |
+| Rose | 30  | alice@example.com |
+| Joey | 30  | alice@example.com |
+| Monica | 30  | alice@example.com |
+| Pheobe | 30  | alice@example.com |
+| Rachel | 30  | alice@example.com |
+| Chandler | 30  | alice@example.com |
+
+More text...
+
+| ID | Product | Price |
+|----|---------|-------|
+| 1  | Apple   | $1.99 |
+| 2  | Orange  | $0.99 |
+`;
+const result = extractFromFull(markDownString)
+console.log("The JSON data: " ,result  )
 
 // extracting from the relative path in file system
 const filepath = 'path/to/something.md'
