@@ -4,9 +4,9 @@ import styles from '@/components/style'
 
 const ProjectHeader = () => {
     return (
-        <div className="flex  bg-cover  max-w-[68rem] mx-auto mt-32 text-center flex-col items-center ">
+        <div className="flex  bg-cover mr-auto ml-10  mt-32 text-left flex-col justify-start items-start ">
             <h1
-                className="animate-fade-up text-balance dark:text-white text-neutral-950  mb-10  font-heading font-extrabold tracking-tight opacity-0 sm:text-6xl md:text-7xl lg:text-[10rem]"
+                className="animate-fade-up   text-balance dark:text-white text-neutral-950  mb-10  font-heading font-extrabold tracking-tight opacity-0 sm:text-6xl md:text-7xl lg:text-[10rem]"
                 style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
             >
                 PROGRESS  <br />

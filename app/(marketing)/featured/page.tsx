@@ -3,7 +3,7 @@ import { Board } from "@/components/project-track";
 
  const Featured = () => {
     return (
-      <div className="h-screen w-full overflow-hidden bg-transparent mx-auo flex flex-col justify-center items-center text-neutral-50">
+      <div className="h-screen max-w-7xl overflow-hidden bg-transparent mx-auto flex flex-col justify-start items-center text-neutral-50">
 
         <ProjectHeader />
         <Board />
