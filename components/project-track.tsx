@@ -310,7 +310,7 @@ const DEFAULT_CARDS = [
     { title: "More Curated Parsing of the data", id: "1", column: "backlog" },
     { title: "Somehow integrated with AI to make it pass the edgecases", id: "2", column: "backlog" },
     { title: "Optimizing some utils functions", id: "3", column: "backlog" },
-    { title: "Making sure it is consitent accross the api", id: "4", column: "backlog" },
+    // { title: "Making sure it is consitent accross the api", id: "4", column: "backlog" },
     // TODO
     {
         title: "Finishing the api for full text parsing",
