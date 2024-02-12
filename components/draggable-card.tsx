@@ -67,7 +67,7 @@ export function DraggableCard({
     onMouseLeave={handleMouseLeave}
     
       className={cn(
-        "group relative rounded-xl font-urban bg-gradient-to-tr from-neutral-900 to-neutral-800/80 border p-6 shadow-xl transition-shadow hover:shadow-lg",
+        "group relative rounded-xl font-urban bg-gradient-to-tr from-neutral-900 backdrop-blur-2xl to-neutral-800/70 border p-6 shadow-xl transition-shadow hover:shadow-lg",
         !disabled && " opacity-60",
         className
       )}
