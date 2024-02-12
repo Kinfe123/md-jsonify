@@ -35,6 +35,7 @@
   .button:hover:before {
     transform: scaleX(1);
     transform-origin: bottom left;
+    margin-top: -100px;
   }
   
   .button .clone > *,
