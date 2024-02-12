@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site"
 
 import Feeder from "@/components/feeder"
 import GetStarted from "@/components/gradient-btn"
+import ProgressBtn from "@/components/button-project/projecc-progress-btn"
 
 
 export default async function IndexPage() {
@@ -51,10 +52,11 @@ export default async function IndexPage() {
           </p>
 
           <div
-            className="flex animate-fade-up justify-center space-x-2 opacity-0 md:space-x-4"
+            className="flex animate-fade-up justify-center items-center space-x-2 opacity-0 md:space-x-4"
             style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
           >
             <GetStarted />
+            <ProgressBtn />
 
           </div>
 
