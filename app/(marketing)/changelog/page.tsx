@@ -6,13 +6,13 @@ export const metadata = {
 
 const ChangeLogPage = () => {
     return (
-        <div className="h-full w-full">
+        <div className="h-screen w-full">
 
-            <div className="hidden dark:flex">
+            {/* <div className="hidden dark:flex">
                 <div className="absolute  bottom-0 left-0 top-0 z-[-2] h-screen overflow-hidden  bg-fixed  w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
 
                 </div>
-            </div>
+            </div> */}
             <section className="space-y-6 pb-12 pt-16 lg:py-28">
                 <div className="container flex  flex-col items-right justify-end gap-5 text-center">
 

@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.hidden_scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hidden_scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -53,6 +63,7 @@
 @layer base {
   * {
     @apply border-border;
+  
 
   }
   body {
