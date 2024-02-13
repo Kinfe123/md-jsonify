@@ -56,3 +56,56 @@ export function extract(rawData) {
     }
     return result;
   }
+
+  const prune = (mdString) => {
+    const findPipe = mdString.includes("|");
+    const mdStingify = mdString.toString();
+    let pipes = 0;
+    let bars = 0;
+    for (let str of mdStingify) {
+      if (str === "|") pipes += 1;
+      if (str === "-") bars += 1;
+    }
+    let passThreshold = false;
+  
+    if (pipes >= 6 && bars >= 7) {
+      passThreshold = true;
+    }
+    return findPipe && passThreshold;
+  };
+  export const extractFromString = (mdString) => {
+    const pipeValid = prune(mdString);
+  
+    if (pipeValid) {
+      const result = extract(mdString);
+      return result;
+    } else {
+      return [];
+    }
+  };
+
+  export const extractFromFull = (markdown) => {
+    const tableRegex = /\|.*\|\n((?:\|.*\|\n)+)/g;
+    const tables = [];
+  
+    let match;
+    let str = "";
+  
+    while ((match = tableRegex.exec(markdown)) !== null) {
+      // extracting each rows and pushing them to be processed
+      for (let x of match) {
+         // @ts-ignore
+        tables.push(x.trim());
+      }
+      tables.pop();
+    }
+    const result = []
+    for(let each of tables){
+      // @ts-ignore
+      result.push(extractFromString(each))
+  
+    }
+    
+  
+    return result;
+  };

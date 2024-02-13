@@ -1,7 +1,7 @@
 
 'use client '
 
-import { extract } from "@/lib/extract"
+import { extract, extractFromFull } from "@/lib/extract"
 import { useState } from 'react'
 
 import { Check, CopyIcon } from "lucide-react"
@@ -11,7 +11,7 @@ const JsonDisplay = (props: { md: string }) => {
     const [copy, setCopied] = useState(false)
     const [text, setText] = useState('')
     // @ts-nocheck
-    const parsed = extract(props.md)
+    const parsed = extractFromFull(props.md)
     const parsidified = JSON.stringify(parsed).replace(/\\/g, '')
     const trimmed = parsed.toString().trim()
     const result = prettyPrintJson.toHtml(parsed)
