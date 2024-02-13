@@ -1,7 +1,7 @@
 
 'use client '
 
-import { extract, extractFromFull } from "@/lib/extract"
+import { extract,extractFromFull } from "@/lib/extract"
 import { useState } from 'react'
 
 import { Check, CopyIcon } from "lucide-react"
