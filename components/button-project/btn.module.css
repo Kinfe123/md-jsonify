@@ -53,29 +53,29 @@
   .button:hover .clone > * {
     opacity: 1;
     transform: translateY(0px);
-    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
   }
   
   .button:hover .text > * {
     opacity: 1;
     transform: translateY(-60px);
-    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    transition: all 0.25s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
   }
   
   .button:hover .clone > :nth-child(1) {
-    transition-delay: 0.15s;
+    transition-delay: 0.20s;
   }
   
   .button:hover .clone > :nth-child(2) {
-    transition-delay: 0.2s;
-  }
-  
-  .button:hover .clone > :nth-child(3) {
     transition-delay: 0.25s;
   }
   
+  .button:hover .clone > :nth-child(3) {
+    transition-delay: 0.30s;
+  }
+  
   .button:hover .clone > :nth-child(4) {
-    transition-delay: 0.3s;
+    transition-delay: 0.35s;
   }
   /* icon style and hover */
   .button svg {
@@ -83,7 +83,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%) rotate(-50deg);
-    transition: 0.2s ease-out;
+    transition: 0.25s ease-out;
   }
   
   .button:hover svg {

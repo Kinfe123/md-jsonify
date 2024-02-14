@@ -11,7 +11,7 @@ export const Board = () => {
     const [cards, setCards] = useState(DEFAULT_CARDS);
 
     return (
-        <div className="flex h-full max-w-full mx-auto  gap-5 overflow-hidden p-12">
+        <div className="flex h-full max-w-full mr-auto  gap-5 overflow-hidden p-12">
             <Column
                 title="Backlog"
                 column="backlog"
