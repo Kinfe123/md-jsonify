@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { CheckIcon, CopyIcon } from "lucide-react"
+import { CheckIcon, CopyIcon, Terminal } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -21,7 +21,7 @@ export function CodeBlock({ children, ...props }: CodeBlockProps) {
     const Icon = {
         js: Icons.javascript,
         ts: Icons.typescript,
-        bash: Icons.bash,
+        bash: Terminal,
     }[language]
 
     const ref = React.useRef<HTMLSpanElement>(null)
@@ -48,8 +48,9 @@ export function CodeBlock({ children, ...props }: CodeBlockProps) {
             </ScrollArea>
             <Button
                 variant="ghost"
-                size="sm"
-                className="size-6 absolute right-0 top-0 hover:bg-zinc-200 hover:text-zinc-900 dark:hover:bg-zinc-700 dark:hover:text-zinc-50"
+                // @ts-ignore
+                size="icon"
+                className="size-6 absolute right-2 top-2 hover:bg-zinc-200 hover:text-red-900 dark:hover:bg-zinc-700 dark:hover:text-zinc-50  dark:text-white"
                 onClick={() => {
                     if (typeof window === "undefined") return
                     setIsCopied(true)
