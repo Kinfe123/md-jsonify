@@ -35,7 +35,7 @@ export const Board = () => {
             />
 
             <Column
-                title="Complete"
+                title="Completed"
                 column="done"
                 headingColor="text-emerald-200"
                 cards={cards}

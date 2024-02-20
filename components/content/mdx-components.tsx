@@ -11,6 +11,7 @@ import { Callout } from "@/components/shared/callout"
 import { MdxCard } from "@/components/content/mdx-card"
 import CardSpotlight from "../hovery-card"
 import { Pre } from "../pre-format"
+import { CodeBlock } from "../code-blocks"
 
 const components = {
   h1: ({ className, ...props }) => (
@@ -135,7 +136,7 @@ const components = {
       {...props}
     />
   ),
-  pre: Pre,
+  pre: CodeBlock,
   // pre: ({ className, ...props }) => (
   //   <pre
   //     className={cn(
