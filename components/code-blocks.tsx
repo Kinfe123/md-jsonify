@@ -49,7 +49,7 @@ export function CodeBlock({ children, ...props }: CodeBlockProps) {
                 variant="ghost"
                 // @ts-ignore
                 size="icon"
-                className="size-6 absolute right-2 top-2 hover:bg-zinc-200 hover:text-red-900 dark:hover:bg-zinc-700 dark:hover:text-zinc-50  dark:text-white"
+                className="size-6 absolute right-2 top-2  hover:bg-zinc-200 hover:text-zinc-900 dark:hover:bg-zinc-700 dark:hover:text-zinc-50 "
                 onClick={() => {
                     if (typeof window === "undefined") return
                     setIsCopied(true)
