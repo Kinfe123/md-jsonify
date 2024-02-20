@@ -17,7 +17,6 @@ interface CodeBlockProps extends React.HTMLProps<HTMLPreElement> {
 export function CodeBlock({ children, ...props }: CodeBlockProps) {
     const language = props["data-language"] as string
     const theme = props["data-theme"] as string
-    console.log(language, 'the languages ')
     const Icon = {
         js: Icons.javascript,
         ts: Icons.typescript,
