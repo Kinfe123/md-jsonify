@@ -28,24 +28,24 @@ export function NavBar({ user, items, children, rightElements, scroll = false }:
 
   return (
     <header
-      className={`sticky top-0 z-40 flex w-full justify-center bg-transparent  backdrop-blur-xl transition-all ${scroll ? scrolled
+      className={`sticky font-urban top-0  flex w-full justify-center bg-transparent  backdrop-blur-xl transition-all ${scroll ? scrolled
         ? "border-b"
         : "bg-background/0"
         : "border-b"}`}
     >
       <div className="container flex h-16 items-center justify-between py-4">
         <MainNav items={items}>{children}</MainNav>
-        <div className='flex justify-center gap-10 items-center'>
+        <div className='flex justify-center gap-10 z-10 items-center'>
 
           <Link
             href={siteConfig.links.github}
             target="_blank"
             rel="noreferrer"
-            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-xl px-4 hover:bg-gradient-to-tr hover:from-purple-400/20 hover:to-transparent")}
+            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "tracking-wide font-bold font-urban rounded-xl px-4 hover:bg-gradient-to-tr hover:from-purple-400/20 hover:to-transparent")}
           >
-            <Icons.gitHub className="mr-2 size-4" />
+            <Icons.gitHub className="mr-2 size-4 " />
             <p>
-              <span className="hidden  sm:inline-block">Star on</span>{" "}GitHub{" "}
+              <span className="hidden z-20 d sm:inline-block">Star on</span>{" "}GitHub{" "}
 
             </p>
           </Link>

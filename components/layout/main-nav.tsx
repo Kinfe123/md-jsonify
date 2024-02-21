@@ -56,7 +56,7 @@ export function MainNav({ items, children }: MainNavProps) {
       </div> */}
       <div className="max-w-4xl mx-auto">
 
-      <NavbarSticky />
+        <NavbarSticky />
       </div>
       {/* {items?.length ? (
         <nav className="hidden gap-6 md:flex">
