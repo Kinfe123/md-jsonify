@@ -60,7 +60,7 @@ export function MdxCard({
     onMouseLeave={handleMouseLeave}
     
       className={cn(
-        "group relative rounded-lg  border p-6 shadow-xl transition-shadow hover:shadow-lg",
+        "group relative  border p-6 shadow-xl transition-shadow hover:shadow-lg",
         disabled && "cursor-not-allowed opacity-60",
         className
       )}
