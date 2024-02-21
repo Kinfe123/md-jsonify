@@ -39,7 +39,7 @@ export default async function IndexPage() {
             style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
           >
             Effortlessly Transmuting Markdown into
-            <span className="text-gradient_indigo-purple font-extrabold">
+            <span className="text-gradient_indigo-purple ml-[0.50rem] font-extrabold">
               JSON Brilliance
             </span>
           </h1>
