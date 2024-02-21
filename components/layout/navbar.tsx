@@ -28,7 +28,7 @@ export function NavBar({ user, items, children, rightElements, scroll = false }:
 
   return (
     <header
-      className={`sticky ffont-urban top-0 z-40 flex w-full justify-center bg-transparent  backdrop-blur-xl transition-all ${scroll ? scrolled
+      className={`sticky font-urban top-0 z-40 flex w-full justify-center bg-transparent  backdrop-blur-xl transition-all ${scroll ? scrolled
         ? "border-b"
         : "bg-background/0"
         : "border-b"}`}
