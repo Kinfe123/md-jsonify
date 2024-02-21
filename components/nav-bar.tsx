@@ -16,9 +16,9 @@ const NavbarSticky = () => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ opacity: 1 }}
         transition={{ ease: [0.17, 0.67, 0.83, 0.67], duration: 0.8 }}
-        className="hidden md:flex w-screen z-0  fixed top-0 left-0 justify-between  p-1  bg-transparent  dark:border-gray-600  animate-header-slide-down-fade"
+        className="hidden md:flex w-full  z-0  fixed top-0 left-0 justify-between  p-1  bg-transparent  dark:border-gray-600  animate-header-slide-down-fade"
       >
-        <div className="mx-auto sm:hidden md:flex justify-center items-center">
+        <div className="mx-auto max-w-4xl  sm:hidden md:flex justify-center items-center">
           <LandingNav />
         </div>
       </motion.nav>
