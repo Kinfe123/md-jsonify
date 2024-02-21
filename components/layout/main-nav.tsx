@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils"
 import { Icons } from "@/components/shared/icons"
 import { MobileNav } from "@/components/layout/mobile-nav"
 import { Badge } from "../ui/badge"
+import LandingNav from "../landingnav"
+import NavbarSticky from "../nav-bar"
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -39,20 +41,24 @@ export function MainNav({ items, children }: MainNavProps) {
   }, [showMobileMenu])
 
   return (
-    <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="hidden items-center space-x-2 md:flex">
+    <div className="flex gap-4 md:gap-10 ">
+      <Link href="/" className="hidden z-10 cursor-pointer items-center space-x-2 md:flex">
         <Icons.logo />
-        <span className="hidden font-urban text-xl font-bold sm:inline-block">
+        <span className="hidden font-urban text-xl font-bold sm:inline-block ">
           {siteConfig.name}
         </span>
       </Link>
-      <div className="relative mr-3">
+      {/* <div className="relative mr-3">
         
       <Badge variant="outline" className="absolute top-[-12px] right-[-36px]">New</Badge>
         <Link href='/playground' className="">Playground</Link>
 
+      </div> */}
+      <div className="max-w-4xl mx-auto">
+
+      <NavbarSticky />
       </div>
-      {items?.length ? (
+      {/* {items?.length ? (
         <nav className="hidden gap-6 md:flex">
           {items?.map((item, index) => (
             <Link
@@ -70,7 +76,7 @@ export function MainNav({ items, children }: MainNavProps) {
             </Link>
           ))}
         </nav>
-      ) : null}
+      ) : null} */}
       <button
         className="flex items-center space-x-2 md:hidden"
         onClick={toggleMobileMenu}

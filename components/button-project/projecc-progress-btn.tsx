@@ -6,13 +6,13 @@ import Link from 'next/link'
 const ProgressBtn = () => {
   return (
     <Link href={'/featured'}>
-      <button className={styles.button}>
-        <div className={cn(styles.text, 'font-heading')}>
+      <button className={cn(styles.button)}>
+        <div className={cn(styles.text, 'font-heading text-black dark:text-white')}>
           <span>Explore</span>
           <span>Our</span>
           <span>Plans</span>
         </div>
-        <div className={cn(styles.clone, 'font-heading')}>
+        <div className={cn(styles.clone, 'font-heading text-black dark:text-white')}>
           <span>Track</span>
           <span>Our</span>
           <span>Progress</span>
@@ -22,7 +22,7 @@ const ProgressBtn = () => {
           stroke="currentColor"
           viewBox="0 0 24 24"
           fill="none"
-          className="h-6 w-6"
+          className="h-6 w-6 text-black dark:text-white"
           xmlns="http://www.w3.org/2000/svg"
           width="20px"
         >

@@ -6,7 +6,7 @@ import { CheckIcon, CopyIcon, Terminal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Icons } from "@/components/icons"
-
+import { Hint } from "@/components/hint"
 interface CodeBlockProps extends React.HTMLProps<HTMLPreElement> {
     // set by `rehype-pretty-code`
     "data-language"?: string
@@ -28,7 +28,7 @@ export function CodeBlock({ children, ...props }: CodeBlockProps) {
 
     return (
         <pre
-            className="my-4  relative flex items-center gap-2 rounded-lg border bg-muted px-4 py-2.5 font-mono text-sm font-semibold text-muted-foreground"
+            className="my-4  relative flex items-center gap-2 rounded-md border-l-2 border-zinc-200/30 bg-purple-300 px-4 py-2.5 font-mono text-sm font-semibold text-muted-foreground"
             {...props}
         >
             {Icon && (
@@ -60,9 +60,15 @@ export function CodeBlock({ children, ...props }: CodeBlockProps) {
                 }}
             >
                 {isCopied ? (
-                    <CheckIcon className="size-3" aria-hidden="true" />
+                    <Hint label="Copied">
+                        <CheckIcon className="size-3" aria-hidden="true" />
+
+                    </Hint>
                 ) : (
-                    <CopyIcon className="size-3" aria-hidden="true" />
+                    <Hint label="Copy to Clipboard">
+                        <CopyIcon className="size-3" aria-hidden="true" />
+
+                    </Hint>
                 )}
                 <span className="sr-only">
                     {isCopied ? "Copied" : "Copy to clipboard"}
